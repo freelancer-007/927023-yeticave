@@ -1,7 +1,7 @@
 <?php
 $is_auth = rand(0, 1);
 
-$user_name = ''; // укажите здесь ваше имя
+$user_name = 'Kirill'; // укажите здесь ваше имя
 $user_avatar = 'img/user.jpg';
 ?>
 <!DOCTYPE html>
