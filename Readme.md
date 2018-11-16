@@ -1,7 +1,7 @@
 # Личный проект «YetiCave»
 
 * Студент: [Кирилл](https://up.htmlacademy.ru/php/7/user/927023).
-* Наставник: `Олег Скляров`.
+* Наставник: [Олег Скляров](https://htmlacademy.ru/profile/id926687).
 
 ---
 
