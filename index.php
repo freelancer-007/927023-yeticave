@@ -1,7 +1,7 @@
 <?php
 $is_auth = rand(0, 1);
 
-$user_name = 'Kirill'; // укажите здесь ваше имя
+$user_name = 'Kirill';
 $user_avatar = 'img/user.jpg';
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,6 @@ $user_avatar = 'img/user.jpg';
 
         <nav class="user-menu">
 
-        <!-- здесь должен быть PHP код для показа аватара пользователя -->
         <?php if ($is_auth): ?>
             <div class="user-menu__image">
                 <img src="img/user.jpg" width="40" height="40" alt="Пользователь">
@@ -46,7 +45,7 @@ $user_avatar = 'img/user.jpg';
                 <a href="#">Вход</a>
             </li>
         </ul>
-        <?php endif ?>
+        <?php endif; ?>
 
         </nav>
     </div>
