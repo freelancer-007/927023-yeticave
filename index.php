@@ -54,10 +54,10 @@ $lots = [
 
 function format_price( $price ) {
 
-    // 1.
+    // 1. Округление цены
     $price_rounded = ceil( $price );
 
-    // 2.
+    // 2. Разделение разрядов пробелом
     if ( $price_rounded >= 1000 ){
         $price_string = (string) $price_rounded;
         $price_first  = substr( $price_string, 0, mb_strlen($price_string)-3) ;        
@@ -66,10 +66,10 @@ function format_price( $price ) {
         $price_rounded = $price_first . ' ' . $price_second;
     }
 
-    // 3.
+    // 3. Добавление валюты
     $price_full = $price_rounded . '<b class="rub">р</b>';
 
-    // 4.
+    // 4. Возврат значения
     return $price_full;
 }
 
