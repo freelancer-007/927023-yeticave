@@ -54,22 +54,18 @@ $lots = [
 
 function format_price( float $price ): string {
 
-    // 1. Округление цены и приведение к строке
-    $price_rounded = (ceil( $price )); //$price_rounded =  strval(ceil( $price ));
+    $price_rounded = ceil($price);
 
-    // 2. Разделение разрядов пробелом
     if ( $price_rounded >= 1000 ){
         $price_string = (string) $price_rounded;
-        $price_start  = substr( $price_string, 0, mb_strlen($price_string)-3);
-        $price_end = substr( $price_string, -3);
+        $price_start  = substr($price_string, 0, strlen($price_string)-3);
+        $price_end = substr($price_string, -3);
 
         $price_rounded = $price_start . ' ' . $price_end;
     }
 
-    // 3. Добавление валюты
     $price_full = $price_rounded . '<b class="rub">р</b>';
 
-    // 4. Возврат значения
     return  $price_full;
 }
 
