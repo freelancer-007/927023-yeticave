@@ -4,12 +4,12 @@ $is_auth = rand(0, 1);
 $user_name = 'Kirill';
 $user_avatar = 'img/user.jpg';
 
-$categories = [ 
-    'Доски и лыжи', 
-    'Крепления', 
-    'Ботинки', 
-    'Одежда', 
-    'Инструменты', 
+$categories = [
+    'Доски и лыжи',
+    'Крепления',
+    'Ботинки',
+    'Одежда',
+    'Инструменты',
     'Разное'
 ];
 
@@ -52,25 +52,25 @@ $lots = [
     ]
 ];
 
-function format_price( $price ) {
+function format_price( float $price ): string {
 
-    // 1. Округление цены
-    $price_rounded = ceil( $price );
+    // 1. Округление цены и приведение к строке
+    $price_rounded = (ceil( $price )); //$price_rounded =  strval(ceil( $price ));
 
     // 2. Разделение разрядов пробелом
     if ( $price_rounded >= 1000 ){
         $price_string = (string) $price_rounded;
-        $price_first  = substr( $price_string, 0, mb_strlen($price_string)-3) ;        
-        $price_second = substr( $price_string, -3) ;
-        
-        $price_rounded = $price_first . ' ' . $price_second;
+        $price_start  = substr( $price_string, 0, mb_strlen($price_string)-3);
+        $price_end = substr( $price_string, -3);
+
+        $price_rounded = $price_start . ' ' . $price_end;
     }
 
     // 3. Добавление валюты
     $price_full = $price_rounded . '<b class="rub">р</b>';
 
     // 4. Возврат значения
-    return $price_full;
+    return  $price_full;
 }
 
 ?>
@@ -177,7 +177,7 @@ function format_price( $price ) {
             <?php foreach ( $categories as $category ): ?>
                 <li class="nav__item">
                     <a href="pages/all-lots.html"><?=$category ?></a>
-                </li>            
+                </li>
             <?php endforeach; ?>
 
         </ul>
