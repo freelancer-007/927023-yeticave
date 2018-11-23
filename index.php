@@ -150,7 +150,7 @@ function format_price( float $price ): string {
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$lot_price = format_price( $lot['price'] ); ?></span>
+                            <span class="lot__cost"><?= format_price( $lot['price'] ); ?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
