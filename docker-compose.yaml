@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  php-fpm:
+    build: docker/php-fpm
+    container_name: yeticave-php-fpm
+    working_dir: /application
+    volumes:
+      - ./docker/php-fpm/php.ini:/usr/local/etc/php/php.ini
+      - .:/application
+
+  nginx:
+    image: nginx:latest
+    container_name: yeticave-nginx
+    working_dir: /application
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/application
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php-fpm
