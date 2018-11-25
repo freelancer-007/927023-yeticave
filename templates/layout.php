@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title><?= $site_title; ?></title>
     <link href="css/normalize.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -56,7 +56,7 @@
 
             <?php foreach ( $categories as $category ): ?>
                 <li class="nav__item">
-                    <a href="pages/all-lots.html"><?=$category ?></a>
+                    <a href="pages/all-lots.html"><?= htmlspecialchars( $category ); ?></a>
                 </li>
             <?php endforeach; ?>
 

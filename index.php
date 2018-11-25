@@ -1,8 +1,10 @@
-<?php
+<?php;
 $is_auth = rand(0, 1);
 
 $user_name = 'Kirill';
 $user_avatar = 'img/user.jpg';
+
+$site_title = 'YetiCave - интернет-аукцион';
 
 $categories = [
     'Доски и лыжи',
@@ -53,9 +55,6 @@ $lots = [
 ];
 
 
-// Фильтрация д-х // перенесена в шаблон вывода layout.php
-
-
 // Сборка шаблона
 
 require_once('functions.php');
@@ -71,12 +70,12 @@ $main = include_template(
 $layout = include_template(
     'layout.php',
     [
-        'content'   => $main,
+        'content'     => $main,
         'site_title'  => $site_title,
         'user_name'   => $user_name,
         'user_avatar' => $user_avatar,
         'is_auth'     => $is_auth,
-        'categories' => $categories,
+        'categories'  => $categories,
     ]
 );
 
