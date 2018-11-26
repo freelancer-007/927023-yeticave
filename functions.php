@@ -32,3 +32,13 @@ function format_price( float $price ): string {
 
     return  $price_full;
 }
+
+
+function time_to_end() {
+    $end_time = date_create('now');
+    $current_time = date_create('tomorrow midnight');
+    $diff = date_diff($current_time, $end_time) ;
+    $time_to_end = date_interval_format( $diff, "%h:%i" );
+
+    return $time_to_end;
+}
