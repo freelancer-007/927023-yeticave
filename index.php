@@ -1,4 +1,4 @@
-<?php;
+<?php
 $is_auth = rand(0, 1);
 
 $user_name = 'Kirill';
@@ -55,7 +55,7 @@ $lots = [
 ];
 
 
-// Сборка шаблона
+
 
 require_once('functions.php');
 
