@@ -32,3 +32,12 @@ function format_price( float $price ): string {
 
     return  $price_full;
 }
+
+
+function time_till_tomorrow_midnight(): string {
+    $current_time = date_create('now');
+    $tomorrow_midnight_time = date_create('tomorrow midnight');
+    $diff_till_tomorrow_midnight = date_diff($tomorrow_midnight_time, $current_time);
+
+    return date_interval_format( $diff_till_tomorrow_midnight, "%H:%I" );
+}
